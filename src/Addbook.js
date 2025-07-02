@@ -38,7 +38,6 @@ export const AddBook=()=>{
             <div className='row justify-content-center mt-2'>
 
             <div className="col-lg-7 col-md-10 col-sm-12">
-
                 <div className="mt-3">
                     <label >Book ID</label>
                     <input type="text" className="form-control" name='bookid' placeholder="Enter Book ID" onChange={track} value={bookdata.bookid} />
