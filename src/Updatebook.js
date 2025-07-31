@@ -45,38 +45,38 @@ export const Updatebook=(book)=>{
 
                 <form className="row g-4">
                     <div className="col-md-6">
-                        <label className="form-label fw-semibold">📖 Book ID</label>
+                        <label className="form-label fw-semibold">Book ID</label>
                         <input type="text" className="form-control" name="bookid" placeholder="Enter Book ID" onChange={track} value={bookdata.bookid} />
                     </div>
 
                     <div className="col-md-6">
-                        <label className="form-label fw-semibold">📘 Book Title</label>
+                        <label className="form-label fw-semibold"> Book Title</label>
                         <input type="text" className="form-control" name="booktitle" placeholder="Enter Book Title" onChange={track} value={bookdata.booktitle} />
                     </div>
 
                     <div className="col-md-6">
-                        <label className="form-label fw-semibold">✍️ Author</label>
+                        <label className="form-label fw-semibold"> Author</label>
                         <input type="text" className="form-control" name="bookauthor" placeholder="Enter Author Name" onChange={track} value={bookdata.bookauthor} />
                     </div>
 
                     <div className="col-md-6">
-                        <label className="form-label fw-semibold">🎭 Genre</label>
+                        <label className="form-label fw-semibold">Genre</label>
                         <input type="text" className="form-control" name="bookgenre" placeholder="Enter Genre" onChange={track} value={bookdata.bookgenre} />
                     </div>
 
                     <div className="col-md-6">
-                        <label className="form-label fw-semibold">📅 Published Year</label>
+                        <label className="form-label fw-semibold">Published Year</label>
                         <input type="text" className="form-control" name="bookyear" placeholder="Enter Book Year" onChange={track} value={bookdata.bookyear} />
                     </div>
 
                     <div className="col-md-6">
-                        <label className="form-label fw-semibold">📝 Description</label>
+                        <label className="form-label fw-semibold">Description</label>
                         <input type="text" className="form-control" name="bookdescription" placeholder="Enter Description" onChange={track} value={bookdata.bookdescription} />
                     </div>
 
                     <div className="col-12 d-flex flex-column flex-md-row justify-content-center gap-3 mt-3">
-                        <button type="button" className="btn btn-success px-4" onClick={add}>✅ Update Book</button>
-                        <button type="button" className="btn btn-outline-danger px-4" onClick={Cancel}>❌ Cancel</button>
+                        <button type="button" className="btn btn-success px-4" onClick={add}>Update Book</button>
+                        <button type="button" className="btn btn-outline-danger px-4" onClick={Cancel}>Cancel</button>
                     </div>
                 </form>
             </div>
