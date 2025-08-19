@@ -1,38 +1,64 @@
-// src/Book.js
-import { db } from './firebase'; // Your configured Firestore instance
-import {
-  collection,
-  addDoc,
-  getDocs,
-  updateDoc,
-  deleteDoc,
-  doc
-} from 'firebase/firestore';
+let Bookdetails =[
+    {
+        "bookid":1,
+        "booktitle":"Iron Man: Extremis",
+        "bookauthor":"Warren Ellis",
+        "bookgenre":"Superhero / Sci-Fi",
+        "bookyear":2005,
+        "bookdescription":"A defining Iron Man arc where Tony Stark upgrades his biology with the Extremis virus, merging man and machine."
+    },
+    {
+        "bookid":2,
+        "booktitle":"Batman: The Killing Joke",
+        "bookauthor":"Alan Moore",
+        "bookgenre":"Graphic Novel / Crime",
+        "bookyear":1988,
+        "bookdescription":"A dark exploration of Joker's origin and his twisted confrontation with Batman."
+    },
+    {
+        "bookid":3,
+        "booktitle":"Spider-Man: Blue",
+        "bookauthor":"Jeph Loeb & Tim Sale",
+        "bookgenre":"Superhero / Romance",
+        "bookyear":2002,
+        "bookdescription":"Peter Parker reflects on his early days as Spider-Man and his love for Gwen Stacy."
+    },
+    {
+        "bookid":4,
+        "booktitle":"Captain America: Winter Soldier",
+        "bookauthor":"Ed Brubaker",
+        "bookgenre":"Superhero / Spy Thriller",
+        "bookyear":2005,
+        "bookdescription":"Captain America uncovers a Soviet assassin known as the Winter Soldier — who turns out to be his old friend Bucky Barnes."
+    },
+]
 
-const bookCollection = collection(db, 'books');
+export const added=(obj)=>{
+    Bookdetails.push(obj)
+}
 
-// ✅ Add book
-export const added = async (book) => {
-  await addDoc(bookCollection, book);
-};
+export const view=()=>{
+    return Bookdetails;
+}
 
-// ✅ View all books
-export const view = async () => {
-  const snapshot = await getDocs(bookCollection);
-  return snapshot.docs.map((doc) => ({
-    id: doc.id, // Firestore document ID
-    ...doc.data()
-  }));
-};
+export const read=(index)=>{
+    return Bookdetails[index];
+}
 
-// ✅ Update book
-export const update = async (book, id) => {
-  const bookRef = doc(db, 'books', id);
-  await updateDoc(bookRef, book);
-};
+export const fetch=(title)=>{
+    const temp=Bookdetails.filter((element)=>{
+        return element.booktitle===title;
+    })
+    return temp[0];
+}
 
-// ✅ Delete book
-export const deleteing = async (id) => {
-  const bookRef = doc(db, 'books', id);
-  await deleteDoc(bookRef);
-};
+export const update=(ele,index)=>{
+    Bookdetails[index]=ele;
+}
+export const deleteing=(index)=>{
+    
+    Bookdetails=Bookdetails.filter((ele,ind)=>{
+        return ind!==index;
+    })
+    return Bookdetails;
+}
